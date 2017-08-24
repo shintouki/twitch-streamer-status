@@ -1,11 +1,12 @@
 let listOfStreamers = ["freecodecamp", "sleepcycles", "cretetion", "northernlion", "brunofin", "riotgames", "summit1g", "Nightblue3", "captainsparklez", "comster404", "esl_csgo", "syndicate", "LIRIK", "PhantomL0rd", "sodapoppin", "imaqtpie"];
 
-let api = "https://api.twitch.tv/kraken/";
+// let api = "https://api.twitch.tv/kraken/";
+let api = "https://wind-bow.gomix.me/twitch-api/";
 
 for (let i = 0; i < listOfStreamers.length; i++) {
   let streamerName = listOfStreamers[i];
-  let streamApi = api + "streams/" + streamerName;
-  let channelApi = api + "channels/" + streamerName;
+  let streamApi = api + "streams/" + streamerName + "?callback=?";
+  let channelApi = api + "channels/" + streamerName + "?callback=?";
 
   $.getJSON(streamApi, function(json) {
       let onlineStatus = json.stream;
